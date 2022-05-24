@@ -32,8 +32,8 @@
         </include>
         ,
         u.user_name as user_name
-        from t_ds_audit_log log
-        join t_ds_user u on log.user_id = u.id
+        from t_ds_audit_log audit_log
+        join t_ds_user u on audit_log.user_id = u.id
         where 1 = 1
         <if test="startDate != null">
             and log.time > #{startDate} and log.time <![CDATA[ <=]]> #{endDate}
